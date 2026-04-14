@@ -19,7 +19,7 @@ function Login() {
   const location = useLocation();
 
   const backendBaseUrl = useMemo(() => {
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "https://web-production-e7586.up.railway.app/";
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "https://alumni-portal-dccjcyg9gxbxfpfe.centralindia-01.azurewebsites.net";
     return apiBaseUrl.replace(/\/api\/?$/, "");
   }, []);
 
@@ -46,7 +46,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await API.post("api//auth/login", { email, password });
+      const response = await API.post("api/auth/login", { email, password });
       const {
         token,
         role,
